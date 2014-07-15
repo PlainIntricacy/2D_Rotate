@@ -1,38 +1,37 @@
 package pkg2d_rotate;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 /**
  *
  * @author todyerutz @ plainintricacy.wordpress.com
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter the size of the 2D array:");
-        int n = Integer.parseInt(input.nextLine());
-        int[][] arr = new int[n][n];
-        int z=1, angle=0;
-        if(n>0){
-        for(int i=0; i<n; i++){
-            for(int j=0; j<n; j++){
-                arr[i][j]=(z%10);
-                z++;
+        Scanner input = new Scanner(new File("C:/Users/Irukandji/Documents/NetBeansProjects/2D_Rotate/src/pkg2d_rotate/challenge_array.txt"));
+        Scanner in = new Scanner(System.in);
+        int[][] arr = new int[10][10];
+        int angle=0;
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr.length; j++){
+                if(input.hasNext()){
+                    arr[i][j]=input.nextInt();
+                }
             }
         }
         System.out.println("Angle: " + angle + " degrees");
         showArr(arr);
         System.out.println("Would you like to rotate the array? y/n");
-            while(input.nextLine().toLowerCase().contains("y")){
+            while(in.nextLine().toLowerCase().contains("y")){
                 angle+=90;
                 rotate(arr);
                 System.out.println("Angle: " + angle + " degrees");
                 showArr(arr);
                 System.out.println("Would you like to rotate the array? y/n");
             };
-        }else{
-            System.out.println("Invalid array size.");
-        }
         input.close();
+        in.close();
     }
         
     public static void showArr(int[][] x){
