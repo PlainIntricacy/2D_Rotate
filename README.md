@@ -5,4 +5,4 @@ Given a NxN size 2D array of numbers. Develop a way to rotate the data as if you
 
 Based on this reddit daily challenge: http://tinyurl.com/oyb43jc
 
-For the challenge input version: http://tinyurl.com/lsnnche
+For the challenge input version, use the challenge branch: http://tinyurl.com/lsnnche
